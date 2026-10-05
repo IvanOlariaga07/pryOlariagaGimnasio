@@ -111,6 +111,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 0;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtEdad
@@ -154,9 +155,9 @@
             this.gpbPlan.Controls.Add(this.lblTurno);
             this.gpbPlan.Controls.Add(this.lblPlan);
             this.gpbPlan.Controls.Add(this.cboPlan);
-            this.gpbPlan.Location = new System.Drawing.Point(300, 138);
+            this.gpbPlan.Location = new System.Drawing.Point(270, 138);
             this.gpbPlan.Name = "gpbPlan";
-            this.gpbPlan.Size = new System.Drawing.Size(233, 134);
+            this.gpbPlan.Size = new System.Drawing.Size(201, 134);
             this.gpbPlan.TabIndex = 2;
             this.gpbPlan.TabStop = false;
             this.gpbPlan.Text = "Plan";
@@ -204,7 +205,7 @@
             // lblPlan
             // 
             this.lblPlan.AutoSize = true;
-            this.lblPlan.Location = new System.Drawing.Point(22, 31);
+            this.lblPlan.Location = new System.Drawing.Point(15, 31);
             this.lblPlan.Name = "lblPlan";
             this.lblPlan.Size = new System.Drawing.Size(34, 13);
             this.lblPlan.TabIndex = 1;
@@ -226,9 +227,9 @@
             // gpbFormaDePago
             // 
             this.gpbFormaDePago.Controls.Add(this.chkCasillero);
-            this.gpbFormaDePago.Location = new System.Drawing.Point(300, 288);
+            this.gpbFormaDePago.Location = new System.Drawing.Point(27, 219);
             this.gpbFormaDePago.Name = "gpbFormaDePago";
-            this.gpbFormaDePago.Size = new System.Drawing.Size(235, 63);
+            this.gpbFormaDePago.Size = new System.Drawing.Size(228, 53);
             this.gpbFormaDePago.TabIndex = 3;
             this.gpbFormaDePago.TabStop = false;
             this.gpbFormaDePago.Text = "Adicional";
@@ -236,7 +237,7 @@
             // chkCasillero
             // 
             this.chkCasillero.AutoSize = true;
-            this.chkCasillero.Location = new System.Drawing.Point(54, 19);
+            this.chkCasillero.Location = new System.Drawing.Point(40, 19);
             this.chkCasillero.Name = "chkCasillero";
             this.chkCasillero.Size = new System.Drawing.Size(137, 17);
             this.chkCasillero.TabIndex = 0;
@@ -249,9 +250,9 @@
             this.gpbFormaPago.Controls.Add(this.cboCuotas);
             this.gpbFormaPago.Controls.Add(this.rbtTarjeta);
             this.gpbFormaPago.Controls.Add(this.rbtEfectivo);
-            this.gpbFormaPago.Location = new System.Drawing.Point(27, 219);
+            this.gpbFormaPago.Location = new System.Drawing.Point(270, 278);
             this.gpbFormaPago.Name = "gpbFormaPago";
-            this.gpbFormaPago.Size = new System.Drawing.Size(228, 63);
+            this.gpbFormaPago.Size = new System.Drawing.Size(201, 63);
             this.gpbFormaPago.TabIndex = 4;
             this.gpbFormaPago.TabStop = false;
             this.gpbFormaPago.Text = " Pago";
@@ -301,7 +302,7 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(300, 371);
+            this.btnCalcular.Location = new System.Drawing.Point(326, 371);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 6;
@@ -311,7 +312,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(403, 371);
+            this.btnLimpiar.Location = new System.Drawing.Point(407, 371);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpiar.TabIndex = 13;
@@ -324,9 +325,9 @@
             this.gpbDescuento.Controls.Add(this.lblDescuento3);
             this.gpbDescuento.Controls.Add(this.lblDescuento2);
             this.gpbDescuento.Controls.Add(this.lblDescuento1);
-            this.gpbDescuento.Location = new System.Drawing.Point(27, 288);
+            this.gpbDescuento.Location = new System.Drawing.Point(27, 278);
             this.gpbDescuento.Name = "gpbDescuento";
-            this.gpbDescuento.Size = new System.Drawing.Size(228, 134);
+            this.gpbDescuento.Size = new System.Drawing.Size(228, 116);
             this.gpbDescuento.TabIndex = 5;
             this.gpbDescuento.TabStop = false;
             this.gpbDescuento.Text = "¡Promo!";
@@ -361,7 +362,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(332, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(270, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(201, 106);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -373,7 +374,7 @@
             this.AcceptButton = this.btnCalcular;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 458);
+            this.ClientSize = new System.Drawing.Size(493, 398);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gpbDescuento);
             this.Controls.Add(this.btnLimpiar);

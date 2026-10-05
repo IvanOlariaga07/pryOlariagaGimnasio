@@ -40,13 +40,13 @@ namespace pryOlariagaGimnasio
             txtMeses.Text = "1";
             cboPlan.SelectedIndex = 0;
             cboTurno.SelectedIndex = 0;
-            chkEstudiante.Enabled = false;
-            chkCasillero.Enabled = false;
+            chkEstudiante.Checked = false;
+            chkCasillero.Checked = false;
             rbtEfectivo.Checked = true;
             cboCuotas.SelectedIndex = -1;
             cboCuotas.Enabled = false;
             btnCalcular.Enabled = false;
-           
+
 
 
 
@@ -58,28 +58,12 @@ namespace pryOlariagaGimnasio
 
         private void frmInscripcion_Load(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtEdad.Clear();
-            txtMeses.Text = "1";
-            cboPlan.SelectedIndex = 0;
-            cboTurno.SelectedIndex = 0;
-            rbtEfectivo.Checked = true;
-            cboCuotas.SelectedIndex = -1;
-            cboCuotas.Enabled = false;
-            btnCalcular.Enabled = false;
+            EstadoInicial();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            txtNombre.Clear();
-            txtEdad.Clear();
-            txtMeses.Text = "1";
-            cboPlan.SelectedIndex = 0;
-            cboTurno.SelectedIndex = 0;
-            rbtEfectivo.Checked = true;
-            cboCuotas.SelectedIndex = -1;
-            cboCuotas.Enabled = false;
-            btnCalcular.Enabled = false;
+            EstadoInicial();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -88,20 +72,20 @@ namespace pryOlariagaGimnasio
             int edad = int.Parse(txtEdad.Text);
             int meses = int.Parse(txtMeses.Text);
 
-            
-            
+
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
             if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != ' ')
             {
                 e.Handled = true;
 
             }
 
-           
+
             if (char.IsLower(e.KeyChar))
             {
                 e.KeyChar = char.ToUpper(e.KeyChar);
@@ -126,6 +110,13 @@ namespace pryOlariagaGimnasio
 
         }
 
-       
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+
+            btnCalcular.Enabled = !string.IsNullOrWhiteSpace(txtNombre.Text)
+                                 && !string.IsNullOrWhiteSpace(txtEdad.Text)
+                                 && !string.IsNullOrWhiteSpace(txtMeses.Text);
+        }
     }
 }
