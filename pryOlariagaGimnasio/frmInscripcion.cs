@@ -23,7 +23,7 @@ namespace pryOlariagaGimnasio
         const decimal RECARGO_3CUOTAS = 0.10m;
         const decimal RECARGO_6CUOTAS = 0.20m;
         const decimal PRECIO_CASILLERO = 3000;
-        const decimal SUBTOTAL = 0;
+        
 
 
         public frmInscripcion()
@@ -71,10 +71,76 @@ namespace pryOlariagaGimnasio
             string nombre = txtNombre.Text;
             int edad = int.Parse(txtEdad.Text);
             int meses = int.Parse(txtMeses.Text);
+            //validacion de datos
+            if (edad < EDAD_MINIMA)
+            {
+                MessageBox.Show("Debe tener al menos 14 años para inscribirse.", "Edad insuficiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (meses < 1 || meses > 12)
+            {
+                MessageBox.Show("La cantidad de meses debe estar entre 1 y 12.", "Rango inválido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //calculo del precio base
+            decimal precioMensual = 0m;
+            string planSeleccionado = cboPlan.SelectedItem.ToString();
+
+            switch (planSeleccionado)
+            {
+                case "Musculación":
+                    precioMensual = PRECIO_MUSCULACION; // Precio: 15000
+                    break;
+
+                case "Funcional":
+                    precioMensual = PRECIO_FUNCIONAL; // Precio: 18000
+                    break;
+
+                case "Natación":
+                    precioMensual = PRECIO_NATACION; // Precio: 22000
+                    break;
+
+                default:
+                    MessageBox.Show("Seleccione un plan válido.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
+            //Horario segun el turno
+            string horario = "";
+            int turnoSeleccionado = cboTurno.SelectedIndex;
+
+            switch (turnoSeleccionado)
+            {
+                case 0: // Mañana
+                    horario = "Mañana (7 a 12 h)";
+                    break;
+
+                case 1: // Tarde
+                    horario = "Tarde (14 a 18 h)";
+                    break;
+
+                case 2: // Noche
+                    horario = "Noche (18 a 23 h)";
+                    break;
+
+                default:
+                    horario = "No especificado";
+                    break;
+            }
+
+            if (chkCasillero.Checked)
+            {
+                precioMensual += PRECIO_CASILLERO;
+            }
+            decimal subtotal = precioMensual * meses; //subtotal base (plan + casillero)
 
 
+            if (edad < 18 )
+            {
+                subtotal *= 0.75m; // Aplicar descuento del 25% para menores de 18 años
+            }
 
         }
+
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {

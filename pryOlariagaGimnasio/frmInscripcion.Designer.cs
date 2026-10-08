@@ -57,13 +57,13 @@
             this.lblDescuento3 = new System.Windows.Forms.Label();
             this.lblDescuento2 = new System.Windows.Forms.Label();
             this.lblDescuento1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.gpbDatosPersonales.SuspendLayout();
             this.gpbPlan.SuspendLayout();
             this.gpbFormaDePago.SuspendLayout();
             this.gpbFormaPago.SuspendLayout();
             this.gpbDescuento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTItulo
@@ -121,6 +121,7 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(24, 20);
             this.txtEdad.TabIndex = 1;
+            this.txtEdad.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // gpbDatosPersonales
@@ -142,9 +143,9 @@
             this.chkEstudiante.AutoSize = true;
             this.chkEstudiante.Location = new System.Drawing.Point(52, 94);
             this.chkEstudiante.Name = "chkEstudiante";
-            this.chkEstudiante.Size = new System.Drawing.Size(76, 17);
+            this.chkEstudiante.Size = new System.Drawing.Size(108, 17);
             this.chkEstudiante.TabIndex = 4;
-            this.chkEstudiante.Text = "Estudiante";
+            this.chkEstudiante.Text = "Estudiante (-15%)";
             this.chkEstudiante.UseVisualStyleBackColor = true;
             // 
             // gpbPlan
@@ -169,6 +170,7 @@
             this.txtMeses.Name = "txtMeses";
             this.txtMeses.Size = new System.Drawing.Size(27, 20);
             this.txtMeses.TabIndex = 3;
+            this.txtMeses.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtMeses.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeses_KeyPress);
             // 
             // lblMeses
@@ -216,9 +218,9 @@
             this.cboPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPlan.FormattingEnabled = true;
             this.cboPlan.Items.AddRange(new object[] {
-            "Musculacion",
+            "Musculación",
             "Funcional",
-            "Natacion"});
+            "Natación"});
             this.cboPlan.Location = new System.Drawing.Point(77, 28);
             this.cboPlan.Name = "cboPlan";
             this.cboPlan.Size = new System.Drawing.Size(121, 21);
@@ -359,15 +361,15 @@
             this.lblDescuento1.TabIndex = 0;
             this.lblDescuento1.Text = "- Menores de 18 años (25% OFF)";
             // 
-            // pictureBox1
+            // picLogo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(270, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 106);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.picLogo.Image = ((System.Drawing.Image)(resources.GetObject("picLogo.Image")));
+            this.picLogo.Location = new System.Drawing.Point(270, 12);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(201, 106);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 15;
+            this.picLogo.TabStop = false;
             // 
             // frmInscripcion
             // 
@@ -375,7 +377,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(493, 398);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picLogo);
             this.Controls.Add(this.gpbDescuento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCalcular);
@@ -385,7 +387,10 @@
             this.Controls.Add(this.gpbDatosPersonales);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTItulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmInscripcion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  Gimnasio Siglo - Inscripcion";
             this.Load += new System.EventHandler(this.frmInscripcion_Load);
             this.gpbDatosPersonales.ResumeLayout(false);
@@ -398,7 +403,7 @@
             this.gpbFormaPago.PerformLayout();
             this.gpbDescuento.ResumeLayout(false);
             this.gpbDescuento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +438,7 @@
         private System.Windows.Forms.Label lblDescuento3;
         private System.Windows.Forms.Label lblDescuento2;
         private System.Windows.Forms.Label lblDescuento1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.CheckBox chkEstudiante;
     }
 }
