@@ -1,3 +1,6 @@
-<Solution>
+﻿<Solution>
   <Project Path="pryOlariagaGimnasio/pryOlariagaGimnasio.csproj" Id="2a46e496-2436-40db-ad71-0381505fff85" />
+  <Project Path="pryOlariagaGimnasioGuia/pryOlariagaGimnasioGuia.csproj" Id="d70a5b24-9c19-4bb8-ac5e-2cbe7b2f55f1" />
 </Solution>
+
+

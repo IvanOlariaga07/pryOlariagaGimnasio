@@ -254,7 +254,7 @@
             this.gpbFormaPago.Controls.Add(this.rbtEfectivo);
             this.gpbFormaPago.Location = new System.Drawing.Point(270, 278);
             this.gpbFormaPago.Name = "gpbFormaPago";
-            this.gpbFormaPago.Size = new System.Drawing.Size(201, 63);
+            this.gpbFormaPago.Size = new System.Drawing.Size(201, 80);
             this.gpbFormaPago.TabIndex = 4;
             this.gpbFormaPago.TabStop = false;
             this.gpbFormaPago.Text = " Pago";
@@ -262,7 +262,7 @@
             // lblCantidadCuotas
             // 
             this.lblCantidadCuotas.AutoSize = true;
-            this.lblCantidadCuotas.Location = new System.Drawing.Point(25, 39);
+            this.lblCantidadCuotas.Location = new System.Drawing.Point(25, 54);
             this.lblCantidadCuotas.Name = "lblCantidadCuotas";
             this.lblCantidadCuotas.Size = new System.Drawing.Size(106, 13);
             this.lblCantidadCuotas.TabIndex = 12;
@@ -275,7 +275,7 @@
             "1",
             "3",
             "6"});
-            this.cboCuotas.Location = new System.Drawing.Point(137, 36);
+            this.cboCuotas.Location = new System.Drawing.Point(137, 46);
             this.cboCuotas.Name = "cboCuotas";
             this.cboCuotas.Size = new System.Drawing.Size(42, 21);
             this.cboCuotas.TabIndex = 2;
@@ -283,23 +283,24 @@
             // rbtTarjeta
             // 
             this.rbtTarjeta.AutoSize = true;
-            this.rbtTarjeta.Location = new System.Drawing.Point(110, 9);
+            this.rbtTarjeta.Location = new System.Drawing.Point(46, 32);
             this.rbtTarjeta.Name = "rbtTarjeta";
             this.rbtTarjeta.Size = new System.Drawing.Size(58, 17);
             this.rbtTarjeta.TabIndex = 1;
             this.rbtTarjeta.TabStop = true;
             this.rbtTarjeta.Text = "Tarjeta";
             this.rbtTarjeta.UseVisualStyleBackColor = true;
+            this.rbtTarjeta.CheckedChanged += new System.EventHandler(this.rbtTarjeta_CheckedChanged);
             // 
             // rbtEfectivo
             // 
             this.rbtEfectivo.AutoSize = true;
-            this.rbtEfectivo.Location = new System.Drawing.Point(40, 9);
+            this.rbtEfectivo.Location = new System.Drawing.Point(46, 9);
             this.rbtEfectivo.Name = "rbtEfectivo";
-            this.rbtEfectivo.Size = new System.Drawing.Size(64, 17);
+            this.rbtEfectivo.Size = new System.Drawing.Size(116, 17);
             this.rbtEfectivo.TabIndex = 0;
             this.rbtEfectivo.TabStop = true;
-            this.rbtEfectivo.Text = "Efectivo";
+            this.rbtEfectivo.Text = "Efectivo (10&% OFF)";
             this.rbtEfectivo.UseVisualStyleBackColor = true;
             // 
             // btnCalcular
@@ -329,7 +330,7 @@
             this.gpbDescuento.Controls.Add(this.lblDescuento1);
             this.gpbDescuento.Location = new System.Drawing.Point(27, 278);
             this.gpbDescuento.Name = "gpbDescuento";
-            this.gpbDescuento.Size = new System.Drawing.Size(228, 116);
+            this.gpbDescuento.Size = new System.Drawing.Size(228, 80);
             this.gpbDescuento.TabIndex = 5;
             this.gpbDescuento.TabStop = false;
             this.gpbDescuento.Text = "¡Promo!";
@@ -337,7 +338,7 @@
             // lblDescuento3
             // 
             this.lblDescuento3.AutoSize = true;
-            this.lblDescuento3.Location = new System.Drawing.Point(25, 38);
+            this.lblDescuento3.Location = new System.Drawing.Point(26, 16);
             this.lblDescuento3.Name = "lblDescuento3";
             this.lblDescuento3.Size = new System.Drawing.Size(146, 13);
             this.lblDescuento3.TabIndex = 2;
@@ -346,7 +347,7 @@
             // lblDescuento2
             // 
             this.lblDescuento2.AutoSize = true;
-            this.lblDescuento2.Location = new System.Drawing.Point(25, 93);
+            this.lblDescuento2.Location = new System.Drawing.Point(26, 54);
             this.lblDescuento2.Name = "lblDescuento2";
             this.lblDescuento2.Size = new System.Drawing.Size(134, 13);
             this.lblDescuento2.TabIndex = 1;
@@ -355,7 +356,7 @@
             // lblDescuento1
             // 
             this.lblDescuento1.AutoSize = true;
-            this.lblDescuento1.Location = new System.Drawing.Point(25, 67);
+            this.lblDescuento1.Location = new System.Drawing.Point(26, 36);
             this.lblDescuento1.Name = "lblDescuento1";
             this.lblDescuento1.Size = new System.Drawing.Size(162, 13);
             this.lblDescuento1.TabIndex = 0;
