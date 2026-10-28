@@ -53,11 +53,13 @@
             this.rbtEfectivo = new System.Windows.Forms.RadioButton();
             this.btnCalcular = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
             this.gpbDescuento = new System.Windows.Forms.GroupBox();
             this.lblDescuento3 = new System.Windows.Forms.Label();
             this.lblDescuento2 = new System.Windows.Forms.Label();
             this.lblDescuento1 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lstRegistro = new System.Windows.Forms.ListBox();
             this.gpbDatosPersonales.SuspendLayout();
             this.gpbPlan.SuspendLayout();
             this.gpbFormaDePago.SuspendLayout();
@@ -305,7 +307,7 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(326, 371);
+            this.btnCalcular.Location = new System.Drawing.Point(347, 414);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 6;
@@ -315,13 +317,23 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(407, 371);
+            this.btnLimpiar.Location = new System.Drawing.Point(425, 414);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(57, 23);
             this.btnLimpiar.TabIndex = 13;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(270, 414);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.TabIndex = 17;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // gpbDescuento
             // 
@@ -372,16 +384,26 @@
             this.picLogo.TabIndex = 15;
             this.picLogo.TabStop = false;
             // 
+            // lstRegistro
+            // 
+            this.lstRegistro.FormattingEnabled = true;
+            this.lstRegistro.Location = new System.Drawing.Point(27, 364);
+            this.lstRegistro.Name = "lstRegistro";
+            this.lstRegistro.Size = new System.Drawing.Size(228, 69);
+            this.lstRegistro.TabIndex = 16;
+            // 
             // frmInscripcion
             // 
             this.AcceptButton = this.btnCalcular;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(493, 398);
+            this.ClientSize = new System.Drawing.Size(493, 449);
+            this.Controls.Add(this.lstRegistro);
             this.Controls.Add(this.picLogo);
             this.Controls.Add(this.gpbDescuento);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.gpbFormaPago);
             this.Controls.Add(this.gpbFormaDePago);
             this.Controls.Add(this.gpbPlan);
@@ -435,12 +457,14 @@
         private System.Windows.Forms.ComboBox cboCuotas;
         private System.Windows.Forms.Button btnCalcular;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.GroupBox gpbDescuento;
         private System.Windows.Forms.Label lblDescuento3;
         private System.Windows.Forms.Label lblDescuento2;
         private System.Windows.Forms.Label lblDescuento1;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.CheckBox chkEstudiante;
+        private System.Windows.Forms.ListBox lstRegistro;
     }
 }
 

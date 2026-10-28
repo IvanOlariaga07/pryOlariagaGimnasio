@@ -32,12 +32,15 @@ namespace pryOlariagaGimnasio
             public int Edad;
             public string Categoria;
             public string Plan;
-            public int Horario;
+            public string Horario;
             public int Meses;
             public string FormaPago;
             public decimal Total;
             public decimal ValorCuota;
         }
+
+        private SOCIO[] registros = new SOCIO[10];
+        private int cantidadRegistros = 0;
 
 
     
@@ -80,6 +83,35 @@ namespace pryOlariagaGimnasio
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             EstadoInicial();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (cantidadRegistros == 0)
+            {
+                MessageBox.Show("Todavía no hay registros para consultar.", "Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            StringBuilder consulta = new StringBuilder();
+
+            for (int i = 0; i < cantidadRegistros; i++)
+            {
+                SOCIO socio = registros[i];
+
+                consulta.AppendLine($"Registro {i + 1}");
+                consulta.AppendLine($"Nombre: {socio.Nombre}");
+                consulta.AppendLine($"Edad: {socio.Edad} años ({socio.Categoria})");
+                consulta.AppendLine($"Plan: {socio.Plan}");
+                consulta.AppendLine($"Turno: {socio.Horario}");
+                consulta.AppendLine($"Meses: {socio.Meses}");
+                consulta.AppendLine($"Forma de pago: {socio.FormaPago}");
+                consulta.AppendLine($"Valor de cuota: {socio.ValorCuota:C2}");
+                consulta.AppendLine($"Total: {socio.Total:C2}");
+                consulta.AppendLine(new string('-', 35));
+            }
+
+            MessageBox.Show(consulta.ToString(), "Registros guardados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
@@ -203,11 +235,32 @@ namespace pryOlariagaGimnasio
             socioActual.Edad = edad;
             socioActual.Categoria = categoria;         // Obtenido con el ternario
             socioActual.Plan = planSeleccionado;       // Obtenido con el switch
-            socioActual.Horario = turnoSeleccionado;         // Obtenido con el switch
+            socioActual.Horario = horario;                   // Obtenido con el switch
             socioActual.Meses = meses;
             socioActual.FormaPago = textoFormaPago;     // Obtenido con el ternario
             socioActual.Total = total;
             socioActual.ValorCuota = valorCuota;       // Obtenido con el ternario
+
+            // Guardar el socio en el arreglo. Si se alcanza la capacidad,
+            // se duplica para poder continuar registrando inscripciones.
+            if (cantidadRegistros == registros.Length)
+            {
+                Array.Resize(ref registros, registros.Length * 2);
+            }
+
+            registros[cantidadRegistros] = socioActual;
+            cantidadRegistros++;
+
+            // Mostrar un resumen de cada inscripción en el ListBox.
+            lstRegistro.Items.Add(
+                $"Nombre: {socioActual.Nombre} | " +
+                $"Edad: {socioActual.Edad} ({socioActual.Categoria}) | " +
+                $"Plan: {socioActual.Plan} | " +
+                $"Turno: {horario} | " +
+                $"Meses: {socioActual.Meses} | " +
+                $"{socioActual.FormaPago} | " +
+                $"Cuota: {socioActual.ValorCuota:C2} | " +
+                $"Total: {socioActual.Total:C2}");
 
             // 2. Armar la cadena de texto con el formato solicitado
             string resumen = $"Resumen de Inscripción\n" +
@@ -222,7 +275,7 @@ namespace pryOlariagaGimnasio
 
             // 3. Mostrar el cuadro de diálogo emergente
             MessageBox.Show(resumen, "Detalle de Liquidación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+        
             // 4. Reiniciar el formulario
             EstadoInicial();
         }
